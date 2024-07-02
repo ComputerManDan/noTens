@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>My Spotify Profile</title>
+    <link rel="stylesheet" href="src/style.css">
+    <script src="src/script.js" type="module"></script>
+</head>
+<body>
+    <header>
+        <h1>No Tens</h1>
+    </header>
+    <main>
+        <div id="profileOverlay" class="overlay" style="display: none;">
+            <section id="profile">
+                <button onclick="closeOverlay()" class="closeButton">Close</button>
+                <h2>Logged in as <span id="displayName"></span></h2>
+                <span id="avatar"></span>
+                <ul id="ulProfile">
+                    <li>Username: <span id="name"></span></li>
+                    <li>User ID: <span id="id"></span></li>
+                    <!-- <li>Email: <span id="email"></span></li> -->
+                    <li>ratings: <span id="ratings"></span></li>
+                    <li>reviews: <span id="reviews"></span></li>
+                    <li>Spotify URI: <a id="uri" href="#"></a></li>
+                    <!-- <li>Link: <a id="url" href="#"></a></li> -->
+                    <!-- <li>Profile Image: <span id="imgUrl"></span></li> -->
+                </ul>
+            </section>
+        </div>
+        <div id="tracksOverlay" class="overlay" style="display: none;">
+            <ol id="tracksList">
+            <button onclick="closeOverlay2()" class="closeButton">Close</button>
+            <h2 style="text-align: center;">Top 100</h2>
+            </ol>
+        </div> 
+        <button class="panel" id="top250">Top 250 Albums</button>
+        <button class="panel" id="trending">Trending songs</button>
+        <button class="panel" id="recent">Genre</button>
+        <button class="panel" id="billboard" onclick="showMessage('billboard')">Billboard Top 100</button>       
+        <button class="panel" id="editorsChoice">Editors Choice</button>
+        <button class="panel" id="forYou">For You</button>
+        <div id="searchResults" class="overlay" style="display: none;">
+            <div class="lightboxContent">
+                <h2>Search Results</h2>
+                <div id="searchResultsContainer"></div>
+            </div>
+            <button onclick="closeSearchResults()" class="closeButton">Close</button>
+        </div>
+    </main>
+    <nav id="bottomNav">
+        <a href="index.html"><button id="homeButton">Home</button></a>
+        <input type="search" id="searchBar" placeholder="Search...">
+        <button id="profileButton" onclick="showMessage('Profile')">Profile</button>
+    </nav>
+</body>
+</html>
